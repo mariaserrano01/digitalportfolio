@@ -33,7 +33,37 @@ LUNA integrates real-time hardware workflows into an intuitive digital touchpoin
 *   **Pre-Registered Logins:** Rapid QR/Invitation barcode verification workflows.
 *   **Walk-In Processing:** Onboard data gathering streams for unregistered office traffic.
 
+
 ---
 
 ### III. Strategic Marketing & Business Framework (Phase 1)
 Design decisions are tightly paired with quantitative key performance indicators (KPIs) to prepare LUNA for commercial scaling:
+STRATEGIC LEVEL       ▶  Align visual & narrative identity with Óberon TSI innovation.
+TACTICAL LEVEL        ▶  Generate functional mockups across Web, Desktop, & Hologram arrays.
+OPERATIONAL LEVEL     ▶  Audit 100% of expressions to match technical development pipelines.
+
+
+#### Metrics and Deliverables
+*   **KPI Requirement:** 100% of animation profiles adjusted to development guidelines before phase closure.
+*   **Operational Validation:** 1 Functional Mockup + 1 Technical Holographic projection matrix completed.
+*   **Vocal Engineering:** Strategic curation of multilingual identity layers via *Azure Custom Neural Voice*.
+
+---
+
+### IV. Design Evolution & Control Logs
+#### Prototype V1 vs. Prototype V2 Refinements
+*   **Color Optimization:** Implemented targeted green shading and advanced structural color-blocking.
+*   **Brand Placement:** Integrated high-contrast "OBERON" corporate typography on the front plate.
+*   **Chassis Contours:** Replaced baseline limb components with a unified aerodynamic "Luna" arm language.
+
+---
+
+### V. Phase 1 Budget & Infrastructure Allocation
+Resource investments reflect standard enterprise production pipelines:
+*   **Asset Concept Design & Expressions Adjustments:** $13,090,000 COP
+*   **3D Engineering Architecture (Cinema 4D Pro Suite):** $4,800,000 COP
+*   **Total Budget Track:** **$17,890,000 COP**
+
+---
+*Contact: (https://www.linkedin.com/in/maria-camila-serrano-lopez/)*
+
