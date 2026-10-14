@@ -1,82 +1,79 @@
-# Maria Serrano | Digital Portfolio
-Welcome to my professional portfolio. Here, I showcase my work bridging the gap between advanced product engineering, User Experience (UX) design, and data-driven marketing strategies.
+<div align="center">
+
+# María Serrano
+
+**Analytics marketer.** MS in Marketing (analytics track) at UT Austin McCombs · Junior Marketing Director at Óberon TSI, Bogotá
+
+*"I market the way I swim: with heart, and by the numbers."*
+
+[**mariaserrano.co**](https://mariaserrano.co) · [**Job Search Finder (live)**](https://mariaserrano01.github.io/digitalportfolio/job-search-finder/) · [**LinkedIn**](https://www.linkedin.com/in/maria-camila-serrano-lopez/)
+
+</div>
 
 ---
 
-## Featured Project: LUNA — Next-Gen UX Virtual Assistant
-**Role:** Product Marketing Manager & UX Strategy Lead  
-**Ecosystem:** Óberon TSI
+## Products
 
-LUNA is an interactive Artificial Intelligence Agent designed to humanize automated physical access and guest check-ins for high-traffic environments. This documentation outlines the Phase 1 strategy, tracking the development from creative concept to commercial B2B positioning.
+### 1 · Job Search Finder — a marketing job finder
 
----
+[![Job Search Finder: the screen splits into analytical and strategic roles](job-search-finder/docs/shot-jobsearch.jpg)](https://mariaserrano01.github.io/digitalportfolio/job-search-finder/)
 
-### I. Creative Concept & Design Principles
-The core architecture focuses on an empathetic digital persona, avoiding clinical automation to create a conversational interface:
-*   **Visual Philosophy:** Minimalist, sleek, and organic aerodynamic chassis. High aesthetic reference inspired by the clean contours of EVE (*Wall-E*).
-*   **Empathy Engineering:** A warm, protective character behavior layer modeled after Baymax (*Big Hero 6*).
-*   **Facial Matrices:** Communicative eye and single-line expression arrays designed for fluid micro-expressions, drawing from the interactive mechanics of Eilik.
+A single-page dashboard that answers one question for marketing job seekers: *which openings deserve my time?* Pick a country (United States first) and the screen splits into **analytical roles** (analytics, insights, growth, CRM, digital) and **strategic roles** (strategy, brand, operations, communications), each filtered by role type, work arrangement, job type, level, industry and pay.
 
-#### Core Motion States & Avatar Poses
-To support contextual dialogue systems, the asset pipeline implements specific procedural animation triggers:
-*   Greeting & Farewells
-*   System Processing (Thinking / Loading)
-*   Active Idle & Directing (Guidance)
-*   Dynamic Feedback (Success / System Error states)
-*   Standby (Power-saving mode)
+| Section | What it does |
+|---|---|
+| **Job search** | 83 real openings in the United States and Colombia, explained card by card: what the job is, where it sits in marketing, requirements, what to study, how to approach it. |
+| **Learn the areas** | The eight areas of marketing, grouped into analytical and strategic: the question each area answers, methods, tools, role types, where the jobs are, what to study. |
+| **Dream Jobs** | A shortlist ranked 0–100 by resume match (35), role fit (25), the viewer's interest (25) and salary compatibility (15), with favorites, statuses, notes and CSV/JSON export. |
 
----
+Anyone can bring their own profile: upload a resume (PDF, Word or text) for a keyword match against every posting, set salary targets per currency, add openings, promote any opening to Dream Jobs and export the data. Everything runs in the browser; nothing is uploaded anywhere.
 
-### II. Functional UX Specifications
-LUNA integrates real-time hardware workflows into an intuitive digital touchpoint:
-*   **Biometric Security:** Integrated contactless facial recognition for secure authentication.
-*   **Pre-Registered Logins:** Rapid QR/Invitation barcode verification workflows.
-*   **Walk-In Processing:** Onboard data gathering streams for unregistered office traffic.
+**Stack:** one HTML file, vanilla JavaScript, HTML-bar charts with a colorblind-checked palette, light and dark mode, phone layout, no build step.
+**Code and data:** [`job-search-finder/`](job-search-finder/) · [project README](job-search-finder/README.md)
 
+<details>
+<summary>More screenshots</summary>
 
----
+![Dream Jobs: ranked table, pay vs your minimum, skills the postings ask for](job-search-finder/docs/shot-dreamjobs.jpg)
 
-### III. Strategic Marketing & Business Framework (Phase 1)
-Design decisions are tightly paired with quantitative key performance indicators (KPIs) to prepare LUNA for commercial scaling:
-STRATEGIC LEVEL       ▶  Align visual & narrative identity with Óberon TSI innovation.
-TACTICAL LEVEL        ▶  Generate functional mockups across Web, Desktop, & Hologram arrays.
-OPERATIONAL LEVEL     ▶  Audit 100% of expressions to match technical development pipelines.
+![Learn the areas: the eight areas of marketing with their role types](job-search-finder/docs/shot-areas.jpg)
 
+</details>
 
-#### Metrics and Deliverables
-*   **KPI Requirement:** 100% of animation profiles adjusted to development guidelines before phase closure.
-*   **Operational Validation:** 1 Functional Mockup + 1 Technical Holographic projection matrix completed.
-*   **Vocal Engineering:** Strategic curation of multilingual identity layers via *Azure Custom Neural Voice*.
+### 2 · mariaserrano.co — personal site
+
+[**mariaserrano.co**](https://mariaserrano.co) is the long-form version of this profile: *Water* (open-water swimming, Oceanman World Final 2024), *Work* (marketing at Óberon TSI: Oberon 360, LUNA and Oberon News), *Race* (the charity race created for Fundación Abraza un Sueño), *Approach* (a four-step, data-driven method for testing marketing ideas) and *Now* (the master's at McCombs, skills and goals).
 
 ---
 
-### IV. Design Evolution & Control Logs
-#### Prototype V1 vs. Prototype V2 Refinements
-*   **Color Optimization:** Implemented targeted green shading and advanced structural color-blocking.
-*   **Brand Placement:** Integrated high-contrast "OBERON" corporate typography on the front plate.
-*   **Chassis Contours:** Replaced baseline limb components with a unified aerodynamic "Luna" arm language.
+## Case study
+
+### LUNA — Next-Gen UX Virtual Assistant (Óberon TSI)
+
+Product Marketing Manager & UX Strategy Lead for an AI agent that humanizes automated physical access and guest check-ins. The Phase 1 write-up covers the creative concept and design principles, the functional UX specification, the strategic marketing framework with its KPIs, the V1 → V2 design log and the Phase 1 budget.
+
+[Read the case study](projects/luna/README.md) · [PDF](projects/luna/Project%20LUNA%20-%20UT%20Austin%20Academic%20Portfolio.pdf)
 
 ---
 
-### V. Phase 1 Budget & Infrastructure Allocation
-Resource investments reflect standard enterprise production pipelines:
-*   **Asset Concept Design & Expressions Adjustments:** $13,090,000 COP
-*   **3D Engineering Architecture (Cinema 4D Pro Suite):** $4,800,000 COP
-*   **Total Budget Track:** **$17,890,000 COP**
+## Repository map
+
+```
+digitalportfolio/
+├── index.html                 Landing page for GitHub Pages (links to everything below)
+├── job-search-finder/         Product 1: the marketing job finder
+│   ├── index.html             The whole app, one file
+│   ├── README.md              How it works, scoring, data
+│   ├── sample-resume.txt      A resume to try the resume match with
+│   └── docs/                  Screenshots
+└── projects/
+    └── luna/                  Case study: LUNA (write-up + PDF)
+```
 
 ---
 
-## Project: Job Search Finder — Marketing Job Finder
-**Role:** Product owner, data collection & analytics design  
-**Folder:** [`job-search-finder/`](job-search-finder/) · **Live page:** `https://mariaserrano01.github.io/digitalportfolio/job-search-finder/` (once GitHub Pages is enabled)
+<div align="center">
 
-A single-page marketing job finder built as a marketing analytics portfolio piece. Pick a country (United States first) and the screen splits into **analytical roles** (analytics, insights, growth, CRM, digital) and **strategic roles** (strategy, brand, operations, communications), each filtered by role type, work arrangement, job type, level, industry and pay.
+Bogotá · Austin · [LinkedIn](https://www.linkedin.com/in/maria-camila-serrano-lopez/) · [mariaserrano.co](https://mariaserrano.co)
 
-*   **Three sections:** Job search · Learn the areas (the eight areas of marketing explained) · Dream Jobs (a shortlist ranked 0–100 by resume match, role fit, interest and salary compatibility).
-*   **Bring your own profile:** upload a resume (PDF, Word or text) for a keyword-based match against each posting, set salary targets per currency, add your own openings, promote any opening to Dream Jobs, export/import your data as JSON. Everything runs in the browser; nothing is uploaded anywhere.
-*   **Sample data:** 83 real marketing openings in the United States and Colombia (55 of them Dream Jobs) verified on October 13, 2026.
-*   **Stack:** one HTML file, vanilla JavaScript, HTML-bar charts with a colorblind-checked palette, light and dark mode, phone layout.
-
----
-*Contact: (https://www.linkedin.com/in/maria-camila-serrano-lopez/)*
-
+</div>

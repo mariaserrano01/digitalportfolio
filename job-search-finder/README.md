@@ -1,8 +1,10 @@
 # Job Search Finder
 
+[![Job Search Finder](docs/shot-jobsearch.jpg)](https://mariaserrano01.github.io/digitalportfolio/job-search-finder/)
+
 A **marketing job finder**: pick a country and the screen splits into **analytical roles** and **strategic roles**, each filtered by role type. Part of a marketing analytics portfolio. One HTML file, no build step, no framework, no server: everything runs in the browser.
 
-**Live page:** open `index.html`, or publish it with GitHub Pages (see below).
+**Live page:** [mariaserrano01.github.io/digitalportfolio/job-search-finder](https://mariaserrano01.github.io/digitalportfolio/job-search-finder/) · or open `index.html` locally. Part of [María Serrano's portfolio](../README.md).
 
 ## The three sections
 
@@ -26,9 +28,9 @@ Light and dark mode, phone layout, keyboard-accessible, colorblind-checked chart
 
 Open `index.html`, click **Resume** at the top and drop in `sample-resume.txt` to see the resume match in action, then replace it with your own. Click **Add an opening** to add a posting of your own.
 
-## Publishing with GitHub Pages
+## Running it yourself
 
-Settings → Pages → Source: *Deploy from a branch* → branch `main`, folder `/ (root)`. The page is `https://<user>.github.io/<repo>/`.
+Download `index.html` and open it in any browser; there is nothing to install. To host your own copy, put the file in a GitHub repository and enable GitHub Pages (Settings → Pages → *Deploy from a branch*).
 
 ---
 
