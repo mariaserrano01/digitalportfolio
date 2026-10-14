@@ -12,15 +12,17 @@ A **marketing job finder**: pick any country (United States first) and the scree
 
 ## Grounded in the MS in Marketing curriculum
 
-What makes the tool more than a job board is the link to what a Master of Science in Marketing teaches. Three things were written from the curriculum's own concepts:
+What makes the tool more than a job board is the link to what a Master of Science in Marketing teaches. The role taxonomy, the **"What to study"** note on every opening, the **"Master's courses that prepare you"** list on every area and Dream Job, and the role-fit rating were written from the published curriculum of the UT Austin McCombs MS in Marketing:
 
-| In the tool | Curriculum behind it |
+| Term | Courses |
 |---|---|
-| **Role taxonomy**: analytical vs strategic, eight areas, role types | Marketing strategy (5Cs, STP, the consumer decision process, the 4Ps) |
-| **"What to study"** note on every opening and area | Marketing strategy (break-even, customer lifetime value, RFM and direct marketing, perceptual maps, conjoint analysis, pricing and elasticity) · Marketing statistics (regression, logistic regression, chi-square, cluster and factor analysis) · Marketing analytics (importing, cleaning and visualizing data in R) |
-| **Role fit** rating of each Dream Job | How much of the role is analysis, insight and strategy rather than execution, judged with the same concepts |
+| **Summer** | Marketing Management · Financial Management · Statistics for Marketing |
+| **Fall** | Marketing Analytics I · Data Analysis · Data Analytics & Dynamic Pricing · Brand & Growth Strategy · Design Thinking · electives: Clients, Consulting & Communication · Consumer Well-Being · Data Visualization & Storytelling · Experimental Design · Human Insights |
+| **Spring** | Marketing Intelligence Capstone · Marketing Analytics II · Market Data & Demand Modeling · Consumer Behavior · Digital Marketing & Measurement · electives: AI in Marketing · Marketing Analytics III · Marketing Channels · The Role of Marketing in Societal Bias · SQL |
 
-Only the concepts appear in the repository: no course materials, slides, assignments, readings or names of instructors, and nothing about the degree that is not public.
+Each of the eight areas maps to the courses that prepare for it. For example, Marketing Analytics draws on Marketing Analytics I–III, Data Analysis, Statistics for Marketing, Data Visualization & Storytelling, SQL, Digital Marketing & Measurement and Market Data & Demand Modeling; Marketing Strategy draws on Marketing Management, Brand & Growth Strategy, Data Analytics & Dynamic Pricing, Financial Management, Market Data & Demand Modeling, Clients, Consulting & Communication and the Capstone. The full map is in the page's *How it works* section.
+
+Only course titles and concepts appear in the repository: no course materials, slides, assignments, readings or names of instructors.
 
 ## Privacy by design
 
