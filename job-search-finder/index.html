@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Job Search Finder</title>
-<meta name="description" content="A job-search dashboard for marketing roles: openings filtered by country, area of marketing and role type, the areas of marketing explained, and a Dream Jobs shortlist ranked against your resume and salary targets.">
+<title>Marketing Job Search Finder</title>
+<meta name="description" content="Marketing Job Search Finder: pick a country and the screen splits into analytical and strategic roles, each filtered by role type; the areas of marketing explained; and a Dream Jobs shortlist ranked against your resume and salary targets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -293,26 +293,59 @@ td.empty{padding:18px 14px;color:var(--muted)}
 .track-title:first-of-type{margin-top:4px}
 @media (max-width:640px){ .trackf{grid-template-columns:1fr} }
 .split .jobs.one{max-height:none}
+
+/* v5: identity = the split. Blue for analytical, orange for strategic. */
+:root{--t2:#EB6834;--t2-ink:#B4451A;--t2-soft:#FBE9E1}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--t2:#D95926;--t2-ink:#F2A27E;--t2-soft:#3B2114} }
+:root[data-theme="dark"]{--t2:#D95926;--t2-ink:#F2A27E;--t2-soft:#3B2114}
+.hero{border-radius:18px;padding:30px 28px 26px;background:linear-gradient(104deg,var(--accent-soft) 0 54%,var(--t2-soft) 54.2% 100%);border:1px solid var(--line)}
+.hero-in{display:grid;grid-template-columns:1fr auto;gap:18px 32px;align-items:end}
+.hero h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:700;letter-spacing:-.025em;line-height:1.02;margin:0}
+.hero .lede{margin:12px 0 0;color:var(--ink-2);max-width:62ch;font-size:1.02rem}
+.ta{color:var(--accent)} .ts{color:var(--t2-ink)}
+.hero .pbtn{background:var(--surface)}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 20px}
+.panel-tab{display:flex;gap:14px;align-items:center;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;min-width:0}
+.panel-tab .p-n{font-size:2.1rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink-2);min-width:2.2ch}
+.panel-tab .p-x{min-width:0}
+.panel-tab .p-t{display:block;font-weight:700;font-size:1.05rem}
+.panel-tab .p-d{display:block;color:var(--muted);font-size:.84rem;line-height:1.3;margin-top:2px}
+.panel-tab[aria-selected="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.panel-tab[aria-selected="true"] .p-n{color:var(--paper)}
+.panel-tab[aria-selected="true"] .p-d{color:var(--paper);opacity:.75}
+.panel-tab:hover:not([aria-selected="true"]){border-color:var(--line-2)}
+.track.analytical{border-top:4px solid var(--accent)} .track.strategic{border-top:4px solid var(--t2)}
+.track.analytical .track-n{color:var(--accent)} .track.strategic .track-n{color:var(--t2-ink)}
+.track.strategic .job .meta.role{color:var(--t2-ink)}
+.track-title .small{font-weight:500;color:var(--muted);margin-left:8px}
+.track-title.ta{border-left:4px solid var(--accent);padding-left:10px} .track-title.ts{border-left:4px solid var(--t2);padding-left:10px}
+.area.strategic .q{color:var(--t2-ink)}
+.job.t-s .meta.role{color:var(--t2-ink)}
+.tag.ta{background:var(--accent-soft);color:var(--accent);border-color:transparent} .tag.ts{background:var(--t2-soft);color:var(--t2-ink);border-color:transparent}
+@media (max-width:860px){ .hero-in{grid-template-columns:1fr} .hero{padding:22px 18px 20px;background:linear-gradient(160deg,var(--accent-soft) 0 56%,var(--t2-soft) 56.2% 100%)} .panels{grid-template-columns:1fr} .panel-tab{padding:12px 14px} .panel-tab .p-n{font-size:1.7rem} }
+.chip.skill.ta{border-color:var(--accent);color:var(--accent)} .chip.skill.ts{border-color:var(--t2);color:var(--t2-ink)} .chip.skill.ta[aria-pressed="true"],.chip.skill.ts[aria-pressed="true"]{color:var(--paper)}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
-    <div>
-      <h1>Job Search Finder</h1>
-      <p class="lede">A marketing job finder. Pick a country (the United States first) and the screen splits into <strong>analytical roles</strong> and <strong>strategic roles</strong>, each filtered by role type, work arrangement, job type, level and pay. A second section explains the areas of marketing, and a third ranks your Dream Jobs against your resume and salary targets. Ships with a sample set of openings; add your own or hide the sample. Everything runs in your browser. <a href="#about">How it works</a></p>
-    </div>
-    <div class="profile" aria-label="Your profile">
-      <button class="pbtn" id="resBtn" type="button"><i class="dot"></i><span><b>Resume</b><span id="resLbl">Not added</span></span></button>
-      <button class="pbtn" id="tgtBtn" type="button"><i class="dot"></i><span><b>Salary targets</b><span id="tgtLbl">Not set</span></span></button>
-      <button class="pbtn" id="dataBtn" type="button"><i class="dot"></i><span><b>My data</b><span id="dataLbl">Sample only</span></span></button>
+  <header class="hero">
+    <div class="hero-in">
+      <div class="brand">
+        <h1>Marketing Job Search Finder</h1>
+        <p class="lede">Pick a country and the screen splits in two: <strong class="ta">analytical roles</strong> that measure and model, and <strong class="ts">strategic roles</strong> that decide and run, each filtered by role type, work arrangement, job type, level and pay. Learn what every area of marketing does, then rank your Dream Jobs against your resume and salary targets. Everything runs in your browser. <a href="#about">How it works</a></p>
+      </div>
+      <div class="profile" aria-label="Your profile">
+        <button class="pbtn" id="resBtn" type="button"><i class="dot"></i><span><b>Resume</b><span id="resLbl">Not added</span></span></button>
+        <button class="pbtn" id="tgtBtn" type="button"><i class="dot"></i><span><b>Salary targets</b><span id="tgtLbl">Not set</span></span></button>
+        <button class="pbtn" id="dataBtn" type="button"><i class="dot"></i><span><b>My data</b><span id="dataLbl">Sample only</span></span></button>
+      </div>
     </div>
   </header>
 
-  <nav class="tabs" role="tablist" aria-label="Sections">
-    <button class="tab" role="tab" id="tabJobs" aria-selected="true" type="button">Job search<small id="nJobs"></small></button>
-    <button class="tab" role="tab" id="tabAreas" aria-selected="false" type="button">Learn the areas<small id="nAreas"></small></button>
-    <button class="tab" role="tab" id="tabDream" aria-selected="false" type="button">Dream Jobs<small id="nDream"></small></button>
+  <nav class="panels" role="tablist" aria-label="Sections">
+    <button class="panel-tab" role="tab" id="tabJobs" aria-selected="true" type="button"><span class="p-n" id="nJobs"></span><span class="p-x"><span class="p-t">Job search</span><span class="p-d">Openings split into analytical and strategic roles</span></span></button>
+    <button class="panel-tab" role="tab" id="tabAreas" aria-selected="false" type="button"><span class="p-n" id="nAreas"></span><span class="p-x"><span class="p-t">Learn the areas</span><span class="p-d">What each area of marketing does and its role types</span></span></button>
+    <button class="panel-tab" role="tab" id="tabDream" aria-selected="false" type="button"><span class="p-n" id="nDream"></span><span class="p-x"><span class="p-t">Dream Jobs</span><span class="p-d">Ranked against your resume and salary targets</span></span></button>
   </nav>
 
   <!-- Job search -->
@@ -338,12 +371,12 @@ td.empty{padding:18px 14px;color:var(--muted)}
     </div>
     <p class="count" id="jCount" aria-live="polite"></p>
     <div class="split">
-      <section class="track" aria-label="Analytical roles">
+      <section class="track analytical" aria-label="Analytical roles">
         <div class="track-h"><div><h2>Analytical roles</h2><p class="small">Analytics, insights, growth, CRM and digital: roles that measure and model.</p></div><span class="track-n" id="nA"></span></div>
         <div class="trackf"><div class="f"><label for="jRoleA">Role type</label><select id="jRoleA"></select></div><div class="f"><label for="jAreaA">Area</label><select id="jAreaA"></select></div></div>
         <div class="jobs one" id="jListA"></div>
       </section>
-      <section class="track" aria-label="Strategic roles">
+      <section class="track strategic" aria-label="Strategic roles">
         <div class="track-h"><div><h2>Strategic roles</h2><p class="small">Strategy, brand, operations and communications: roles that decide and run.</p></div><span class="track-n" id="nS"></span></div>
         <div class="trackf"><div class="f"><label for="jRoleS">Role type</label><select id="jRoleS"></select></div><div class="f"><label for="jAreaS">Area</label><select id="jAreaS"></select></div></div>
         <div class="jobs one" id="jListS"></div>
@@ -359,9 +392,9 @@ td.empty{padding:18px 14px;color:var(--muted)}
       <p class="count" id="aIntro" style="margin:0;max-width:80ch"></p>
       <button class="btn accent" id="aAdd" type="button">Add an area</button>
     </div>
-    <h2 class="track-title">Analytical roles</h2>
+    <h2 class="track-title ta">Analytical roles <span class="small">measure and model</span></h2>
     <div class="areas" id="aListA"></div>
-    <h2 class="track-title">Strategic roles</h2>
+    <h2 class="track-title ts">Strategic roles <span class="small">decide and run</span></h2>
     <div class="areas" id="aListS"></div>
   </section>
 
@@ -396,7 +429,7 @@ td.empty{padding:18px 14px;color:var(--muted)}
 
   <section class="about" id="about">
     <h2>How it works</h2>
-    <p>A portfolio project built around one question: <em>which marketing openings deserve my time?</em> Three sections. <strong>Job search</strong> filters by country first, then splits the screen into analytical roles (analytics, insights, growth, CRM, digital) and strategic roles (strategy, brand, operations, communications), each with its own role-type filter; work arrangement, job type, level, industry, pay and skills apply to both sides, and every card explains what the job is. <strong>Learn the areas</strong> describes the eight areas of marketing, grouped the same way: what people do, the methods and tools, the role types, where the jobs are and what to study. <strong>Dream Jobs</strong> is a shortlist ranked against your inputs. Any opening can be promoted to Dream Jobs with one click.</p>
+    <p>Marketing Job Search Finder is a portfolio project built around one question: <em>which marketing openings deserve my time?</em> Three sections. <strong>Job search</strong> filters by country first, then splits the screen into analytical roles (analytics, insights, growth, CRM, digital) and strategic roles (strategy, brand, operations, communications), each with its own role-type filter; work arrangement, job type, level, industry, pay and skills apply to both sides, and every card explains what the job is. <strong>Learn the areas</strong> describes the eight areas of marketing, grouped the same way: what people do, the methods and tools, the role types, where the jobs are and what to study. <strong>Dream Jobs</strong> is a shortlist ranked against your inputs. Any opening can be promoted to Dream Jobs with one click.</p>
     <p>The page ships with a sample set: 36 openings and 55 Dream Jobs in the United States and Colombia, read on job boards and the employers' own careers pages and verified on the date in the footer. Add your own openings and areas, hide the sample, and export or import your data as JSON from <strong>My data</strong>.</p>
     <h3>Relevance score in Dream Jobs (0–100)</h3>
     <ul>
@@ -432,6 +465,7 @@ td.empty{padding:18px 14px;color:var(--muted)}
   var STATUS_LABEL = { interested:"Interested", researching:"Researching", applied:"Applied", interviewing:"Interviewing", archived:"Archived" };
   var W = { fit:35, role:25, interest:25, comp:15 };
   var LS = "jsf.v1", DEFAULT_COUNTRY = "United States";
+  var COUNTRIES = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Brazzaville)", "Congo (Kinshasa)", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "São Tomé and Príncipe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe", "Remote (any country)"];
   var ARR = ["On-site","Hybrid","Remote","Not stated"], EMP = ["Full-time","Part-time","Internship","Contract","Not stated"], LEVELS = ["Internship","Junior","Analyst","Mid-level","Senior","Manager","Not stated"];
   var SYM = { USD:"$", COP:"$", MXN:"$", CAD:"$", AUD:"$", ARS:"$", CLP:"$", EUR:"€", GBP:"£", BRL:"R$", PEN:"S/", JPY:"¥", INR:"₹" };
   var CUR_PER = { USD:"year", EUR:"year", GBP:"year", CAD:"year", AUD:"year", JPY:"year", INR:"year", COP:"month", MXN:"month", BRL:"month", ARS:"month", CLP:"month", PEN:"month" };
@@ -613,12 +647,13 @@ td.empty{padding:18px 14px;color:var(--muted)}
   function vacPay(j){ var a = num(j.salMin), b = num(j.salMax); if (a === null && b === null) return null; function one(v){ return shortMoney(v, j.cur); } var t = (a !== null && b !== null && a !== b) ? one(a) + " – " + one(b) : (a !== null && b === null ? "From " + one(a) : one(a !== null ? a : b)); return t + " " + str(j.cur) + (j.per === "month" ? "/month" : j.per === "hour" ? "/hour" : "/year"); }
   function vacComparable(j){ var a = num(j.salMin), b = num(j.salMax); if (a === null && b === null) return null; var tg = targets(j); if (!tg.cur) return null; var per = j.per || tg.per; return { cur:tg.cur, lo:convert(a === null ? b : a, per, tg.per), hi:b === null ? null : convert(b, per, tg.per) }; }
   function vacBelow(j){ var tg = targets(j), min = tg.min !== null ? tg.min : tg.target; if (min === null) return false; var c = vacComparable(j); if (!c) return false; return (c.hi === null ? c.lo : c.hi) < min; }
-  function fillSel(id, vals, label, keep){ var s = $(id), cur = s.value; s.textContent = ""; s.appendChild(el("option",{value:"",text:label})); vals.forEach(function(v){ s.appendChild(el("option",{value:v,text:v})); }); s.value = vals.indexOf(cur) >= 0 ? cur : (keep && vals.indexOf(keep) >= 0 && cur === "" && !s.dataset.touched ? keep : ""); }
+  function fillSel(id, vals, label, keep, names){ var s = $(id), cur = s.value; s.textContent = ""; s.appendChild(el("option",{value:"",text:label})); vals.forEach(function(v){ s.appendChild(el("option",{value:v,text:names ? (names[v] || v) : v})); }); s.value = vals.indexOf(cur) >= 0 ? cur : (keep && vals.indexOf(keep) >= 0 && cur === "" && !s.dataset.touched ? keep : ""); }
+  function fillCountry(id, rows){ var m = {}; rows.forEach(function(j){ if (j.country_name) m[j.country_name] = (m[j.country_name] || 0) + 1; }); var withData = Object.keys(m).sort(function(a, b){ return a === DEFAULT_COUNTRY ? -1 : b === DEFAULT_COUNTRY ? 1 : m[b] - m[a] || a.localeCompare(b); }); var rest = COUNTRIES.filter(function(c){ return !m[c]; }); var names = {}; withData.forEach(function(c){ names[c] = c + " (" + m[c] + ")"; }); fillSel(id, withData.concat(rest), "All countries", DEFAULT_COUNTRY, names); }
   function distinct(rows, key, order){ var m = {}; rows.forEach(function(j){ var v = j[key]; if (v) m[v] = 1; }); var ks = Object.keys(m); if (order){ return order.filter(function(o){ return m[o]; }).concat(ks.filter(function(k){ return order.indexOf(k) < 0; }).sort()); } return ks.sort(); }
   function countryOrder(rows){ var ks = distinct(rows, "country_name"); return ks.filter(function(k){ return k === DEFAULT_COUNTRY; }).concat(ks.filter(function(k){ return k !== DEFAULT_COUNTRY; })); }
   function vacFill(){
     var rows = vacList();
-    fillSel("jCountry", countryOrder(rows), "All countries", DEFAULT_COUNTRY);
+    fillCountry("jCountry", rows);
     [["A","analytical"],["S","strategic"]].forEach(function(t){ var tr = rows.filter(function(j){ return trackOf(j) === t[1]; }); var areas = areaOrder().filter(function(n){ return trackOfArea(n) === t[1] && tr.some(function(j){ return j.area === n; }); }); fillSel("jArea" + t[0], areas, "All areas"); var ar = $("jArea" + t[0]).value; fillSel("jRole" + t[0], roleOptions(tr, ar || null).filter(function(r){ return tr.some(function(j){ return j.role === r && (!ar || j.area === ar); }); }), "All role types"); });
     fillSel("jArr", distinct(rows, "arrangement", ARR), "Any arrangement");
     fillSel("jType", distinct(rows, "employment", EMP), "Any job type");
@@ -646,7 +681,7 @@ td.empty{padding:18px 14px;color:var(--muted)}
   }
   function armed(btn, label, onConfirm){ btn.addEventListener("click", function(){ if (btn.dataset.armed){ onConfirm(); } else { btn.dataset.armed = "1"; btn.textContent = "Confirm: " + label.toLowerCase(); btn.classList.add("danger"); setTimeout(function(){ if (btn.isConnected){ delete btn.dataset.armed; btn.textContent = label; btn.classList.remove("danger"); } }, 4000); } }); return btn; }
   function jobCard(j){
-    var card = el("article",{class:"job"}), open = !!S.jOpen[j.id], f = vacFit(j), dream = isDreamVac(j);
+    var card = el("article",{class:"job " + (trackOf(j) === "strategic" ? "t-s" : "t-a")}), open = !!S.jOpen[j.id], f = vacFit(j), dream = isDreamVac(j);
     card.appendChild(el("div",{class:"hd"},[ el("div",null,[ el("div",{class:"co",text:str(j.company)}), el("h3",{text:str(j.title)}), j.title_original ? el("div",{class:"small",text:"Posted as “" + str(j.title_original) + "”"}) : null ]), el("span",{class:"tag",text:str(j.country_name)}) ]));
     card.appendChild(el("div",{class:"meta",text:[j.city, j.arrangement !== "Not stated" ? j.arrangement : null, j.employment !== "Not stated" ? j.employment : null, j.level !== "Not stated" ? j.level : null].filter(Boolean).join(" · ")}));
     card.appendChild(el("div",{class:"meta role",text:[j.area !== "Not stated" ? j.area : null, j.role !== "Not stated" ? j.role : null].filter(Boolean).join(" › ")}));
@@ -704,10 +739,10 @@ td.empty{padding:18px 14px;color:var(--muted)}
     $("aIntro").textContent = "Eight areas of marketing, grouped into analytical roles (they measure and model) and strategic roles (they decide and run). Each card answers the question the area exists for, then what you do, the methods and tools, the role types you will see in postings, where the jobs are and what to study. Click a role type to see its openings; ★ counts are Dream Jobs.";
     areas.forEach(function(a){ var list = $(a.track === "strategic" ? "aListS" : "aListA");
       var n = rows.filter(function(j){ return j.area === a.name; }).length;
-      var card = el("article",{class:"area"},[ el("h3",{text:str(a.name)}), a.question ? el("p",{class:"q",text:str(a.question)}) : null ]);
+      var card = el("article",{class:"area " + (a.track === "strategic" ? "strategic" : "analytical")},[ el("h3",{text:str(a.name)}), a.question ? el("p",{class:"q",text:str(a.question)}) : null ]);
       AREA_FIELDS.slice(1, 4).forEach(function(x){ if (a[x[0]]){ card.appendChild(el("h4",{text:x[1]})); card.appendChild(el("p",{text:str(a[x[0]])})); } });
       var dreams = dreamList(), nd = dreams.filter(function(j){ return j.family === a.name; }).length;
-      var roles = roleOptions(rows.concat(dreams.map(function(j){ return { area:j.family, role:j.role }; })), a.name); if (roles.length){ card.appendChild(el("h4",{text:"Role types · openings and Dream Jobs"})); var ch = el("div",{class:"chips",style:"margin-top:2px"}); roles.forEach(function(r){ var k = rows.filter(function(j){ return j.area === a.name && j.role === r; }).length, kd = dreams.filter(function(j){ return j.family === a.name && j.role === r; }).length; var b = el("button",{class:"chip skill",type:"button",text:r + (k ? " · " + k : "") + (kd ? " · " + kd + " ★" : ""),title: k || kd ? k + " in Job search, " + kd + " in Dream Jobs" : "No postings yet"}); b.disabled = !k && !kd; if (k) b.addEventListener("click", function(){ var kk = a.track === "strategic" ? "S" : "A"; setView("jobs"); vacFill(); $("jArea" + kk).value = a.name; vacFill(); $("jRole" + kk).value = r; renderJobs(); window.scrollTo(0, 0); }); else if (kd) b.addEventListener("click", function(){ setView("dream"); $("fTrack").value = a.track === "strategic" ? "strategic" : "analytical"; fillSelects(); $("fFam").value = a.name; fillSelects(); $("fRole").value = r; render(); window.scrollTo(0, 0); }); ch.appendChild(b); }); card.appendChild(ch); }
+      var roles = roleOptions(rows.concat(dreams.map(function(j){ return { area:j.family, role:j.role }; })), a.name); if (roles.length){ card.appendChild(el("h4",{text:"Role types · openings and Dream Jobs"})); var ch = el("div",{class:"chips",style:"margin-top:2px"}); roles.forEach(function(r){ var k = rows.filter(function(j){ return j.area === a.name && j.role === r; }).length, kd = dreams.filter(function(j){ return j.family === a.name && j.role === r; }).length; var b = el("button",{class:"chip skill " + (a.track === "strategic" ? "ts" : "ta"),type:"button",text:r + (k ? " · " + k : "") + (kd ? " · " + kd + " ★" : ""),title: k || kd ? k + " in Job search, " + kd + " in Dream Jobs" : "No postings yet"}); b.disabled = !k && !kd; if (k) b.addEventListener("click", function(){ var kk = a.track === "strategic" ? "S" : "A"; setView("jobs"); vacFill(); $("jArea" + kk).value = a.name; vacFill(); $("jRole" + kk).value = r; renderJobs(); window.scrollTo(0, 0); }); else if (kd) b.addEventListener("click", function(){ setView("dream"); $("fTrack").value = a.track === "strategic" ? "strategic" : "analytical"; fillSelects(); $("fFam").value = a.name; fillSelects(); $("fRole").value = r; render(); window.scrollTo(0, 0); }); ch.appendChild(b); }); card.appendChild(ch); }
       AREA_FIELDS.slice(4).forEach(function(x){ if (a[x[0]]){ card.appendChild(el("h4",{text:x[1]})); card.appendChild(el("p",{text:str(a[x[0]])})); } });
       var ft = el("div",{class:"ft frow"}); var b = el("button",{class:"btn ghost",type:"button",text: n ? "See " + n + " opening" + (n === 1 ? "" : "s") + " in this area" : "No openings in this area yet"}); b.disabled = !n;
       b.addEventListener("click", function(){ var kk = a.track === "strategic" ? "S" : "A"; setView("jobs"); vacFill(); $("jArea" + kk).value = a.name; vacFill(); $("jRole" + kk).value = ""; renderJobs(); window.scrollTo(0, 0); });
@@ -738,7 +773,7 @@ td.empty{padding:18px 14px;color:var(--muted)}
   function scoped(){ var fc = $("fCountry").value; var rows = dreamList().filter(function(j){ return (!fc || j.country_name === fc) && (S.showClosed || !closed(j)); }); rows.sort(function(a, b){ return score(b) - score(a) || str(a.company).localeCompare(str(b.company)); }); rows.forEach(function(j, i){ j._rank = i + 1; }); return rows; }
   function filtered(rows){ var q = $("q").value.trim().toLowerCase(), ftk = $("fTrack").value, ff = $("fFam").value, fr = $("fRole").value, fa = $("fArr").value, fi = $("fInd").value, fm = $("fMatch").value, ffit = +$("fFit").value; return rows.filter(function(j){ if (ftk && trackOf(j) !== ftk) return false; if (ff && j.family !== ff) return false; if (fr && j.role !== fr) return false; if (fa && j.arrangement !== fa) return false; if (fi && j.industry_name !== fi) return false; if (fm && match(j) !== fm) return false; if (S.favOnly && !isFav(j)) return false; if (ffit){ var f = fit(j); if (!f || f.pct < ffit) return false; } if (q){ var hay = [j.company, j.title, j.title_original, j.location, j.country_name, j.family, j.role, j.industry_name, (j.tools || []).join(" "), j.description].join(" ").toLowerCase(); if (hay.indexOf(q) < 0) return false; } return true; }); }
   function sorted(rows){ var k = S.sortKey, d = S.sortDir; var val = { rank:function(j){ return j._rank; }, company:function(j){ return str(j.company).toLowerCase(); }, title:function(j){ return str(j.title).toLowerCase(); }, loc:function(j){ return str(j.location).toLowerCase(); }, sal:function(j){ var c = comparable(j); return c ? -(c.hi === null ? c.lo : c.hi) : Infinity; }, match:function(j){ return ["meets","partial","unset","none","below"].indexOf(match(j)); }, fit:function(j){ var f = fit(j); return f ? -f.pct : 1; }, rel:function(j){ return -score(j); }, status:function(j){ var s = (S.user.jobs[j.id] || {}).status; var i = STATUS.indexOf(s); return i < 0 ? 99 : i; } }[k] || function(j){ return j._rank; }; return rows.slice().sort(function(a, b){ var x = val(a), y = val(b); return (x < y ? -1 : x > y ? 1 : a._rank - b._rank) * d; }); }
-  function fillSelects(){ var ftk = $("fTrack").value, rows = dreamList().map(function(j){ return { country_name:j.country_name, area:j.family, role:j.role, arrangement:j.arrangement, industry:j.industry_name }; }).filter(function(j){ return !ftk || trackOfArea(j.area) === ftk; }); fillSel("fCountry", countryOrder(rows), "All countries", DEFAULT_COUNTRY); fillSel("fFam", areaOrder().filter(function(n){ return rows.some(function(j){ return j.area === n; }); }), "All areas"); var ar = $("fFam").value; fillSel("fRole", roleOptions(rows, ar || null).filter(function(r){ return rows.some(function(j){ return j.role === r && (!ar || j.area === ar); }); }), "All role types"); fillSel("fArr", distinct(rows, "arrangement", ARR), "Any arrangement"); fillSel("fInd", distinct(rows, "industry"), "All industries"); }
+  function fillSelects(){ var ftk = $("fTrack").value, rows = dreamList().map(function(j){ return { country_name:j.country_name, area:j.family, role:j.role, arrangement:j.arrangement, industry:j.industry_name }; }).filter(function(j){ return !ftk || trackOfArea(j.area) === ftk; }); fillCountry("fCountry", rows); fillSel("fFam", areaOrder().filter(function(n){ return rows.some(function(j){ return j.area === n; }); }), "All areas"); var ar = $("fFam").value; fillSel("fRole", roleOptions(rows, ar || null).filter(function(r){ return rows.some(function(j){ return j.role === r && (!ar || j.area === ar); }); }), "All role types"); fillSel("fArr", distinct(rows, "arrangement", ARR), "Any arrangement"); fillSel("fInd", distinct(rows, "industry"), "All industries"); }
   function renderOverview(rows, all){
     var box = $("overview"); box.textContent = "";
     var meets = rows.filter(function(j){ return match(j) === "meets"; }).length, partial = rows.filter(function(j){ return match(j) === "partial"; }).length, nopay = rows.filter(function(j){ return match(j) === "none"; }).length, strong = rows.filter(function(j){ var f = fit(j); return f && f.pct >= 70; }).length;
@@ -834,13 +869,13 @@ td.empty{padding:18px 14px;color:var(--muted)}
     var box = el("div",{class:"dlg"}), form = el("form",{novalidate:"novalidate"}), I = {};
     box.appendChild(el("div",{class:"dlg-h"},[ el("div",null,[ el("h2",{text: editing ? "Edit opening" : (opts.dream ? "Add a Dream Job" : "Add an opening")}), el("p",{class:"meta",text:"Any marketing role, any country. Saved in this browser only. Company, title and country are required; everything else sharpens the filters, the charts and the resume match."}) ]), closeB ]));
     var all = vacList();
-    box.appendChild(dl("dlCountry", countryOrder(all).concat(Object.keys(COUNTRY_CUR)).filter(function(v, i, a){ return a.indexOf(v) === i; }))); box.appendChild(dl("dlInd", distinct(all, "industry"))); box.appendChild(dl("dlCur", curSet().concat(Object.keys(CUR_PER)).filter(function(v, i, a){ return a.indexOf(v) === i; })));
+    box.appendChild(dl("dlInd", distinct(all, "industry"))); box.appendChild(dl("dlCur", curSet().concat(Object.keys(CUR_PER)).filter(function(v, i, a){ return a.indexOf(v) === i; })));
     var g = el("div",{class:"form-grid"});
     function field(key, label, node, wide){ I[key] = node; node.id = "o_" + key; g.appendChild(el("div",{class:"f" + (wide ? " wide" : "")},[ el("label",{for:"o_" + key,text:label}), node ])); return node; }
     function text(key, label, ph, list, wide){ var n = el("input",{type:"text",placeholder:ph || null,list:list || null}); n.value = str(m[key]); return field(key, label, n, wide); }
     function select(key, label, vals, labels, dflt){ var s = el("select"); vals.forEach(function(v, i){ s.appendChild(el("option",{value:v,text:labels ? labels[i] : v})); }); s.value = m[key] !== undefined && vals.indexOf(m[key]) >= 0 ? m[key] : (dflt !== undefined ? dflt : vals[vals.length - 1]); return field(key, label, s); }
     text("company", "Company *", "e.g. Spotify"); text("title", "Job title *", "e.g. Marketing Analyst"); text("url", "Link to the posting", "https://…", null, true);
-    var country = text("country", "Country *", "e.g. United States", "dlCountry"); if (!editing && !country.value) country.value = DEFAULT_COUNTRY; text("city", "City", "e.g. Austin, TX");
+    var country = el("select"); COUNTRIES.slice().sort(function(a, b){ return a === DEFAULT_COUNTRY ? -1 : b === DEFAULT_COUNTRY ? 1 : a === "Colombia" ? -1 : b === "Colombia" ? 1 : a.localeCompare(b); }).forEach(function(c){ country.appendChild(el("option",{value:c,text:c})); }); if (m.country && COUNTRIES.indexOf(m.country) < 0) country.appendChild(el("option",{value:m.country,text:m.country})); country.value = m.country || DEFAULT_COUNTRY; field("country", "Country *", country); text("city", "City", "e.g. Austin, TX");
     select("arrangement", "Work arrangement", ARR); select("employment", "Job type", EMP, null, "Full-time"); select("level", "Level", LEVELS);
     var areaSel = el("select"); areaSel.appendChild(el("option",{value:"",text:"Choose an area"})); TRACKS.forEach(function(t){ var og = el("optgroup",{label:TRACK_LABEL[t]}); areasList().forEach(function(a){ if ((a.track === "strategic" ? "strategic" : "analytical") === t) og.appendChild(el("option",{value:a.name,text:a.name})); }); areaSel.appendChild(og); }); areaSel.value = m.area || ""; field("area", "Area of marketing (decides the side of the screen)", areaSel);
     var roleIn = el("input",{type:"text",placeholder:"e.g. Marketing Analyst",list:"dlRole"}); roleIn.value = str(m.role); var roleDl = dl("dlRole", roleOptions(all, areaSel.value)); box.appendChild(roleDl); field("role", "Role type", roleIn);
@@ -873,8 +908,8 @@ td.empty{padding:18px 14px;color:var(--muted)}
   }
 
   /* ================= MY DATA (sample toggle, import, export) ================= */
-  function exportBlob(){ return JSON.stringify({ app:"Job Search Finder", exported:new Date().toISOString(), mine:S.user.mine, areas:S.user.areas, settings:S.user.settings, jobs:S.user.jobs, vac:S.user.vac }, null, 2); }
-  function importData(text){ var o = JSON.parse(text); if (!o || typeof o !== "object") throw new Error("Not a Job Search Finder file."); var n = 0, a = 0; (Array.isArray(o.mine) ? o.mine : []).forEach(function(m){ if (!m || !m.id || !m.company || !m.title) return; var i = S.user.mine.findIndex(function(x){ return x.id === m.id; }); if (i >= 0) S.user.mine[i] = m; else S.user.mine.push(m); n++; }); (Array.isArray(o.areas) ? o.areas : []).forEach(function(x){ if (!x || !x.id || !x.name) return; x.mine = true; var i = S.user.areas.findIndex(function(y){ return y.id === x.id; }); if (i >= 0) S.user.areas[i] = x; else S.user.areas.push(x); a++; }); if (o.settings && typeof o.settings === "object" && o.settings.targets && typeof o.settings.targets === "object") Object.keys(o.settings.targets).forEach(function(k){ S.user.settings.targets[k] = o.settings.targets[k]; }); if (o.jobs && typeof o.jobs === "object") Object.keys(o.jobs).forEach(function(k){ S.user.jobs[k] = o.jobs[k]; }); if (o.vac && typeof o.vac === "object") Object.keys(o.vac).forEach(function(k){ S.user.vac[k] = o.vac[k]; }); save(); return { n:n, a:a }; }
+  function exportBlob(){ return JSON.stringify({ app:"Marketing Job Search Finder", exported:new Date().toISOString(), mine:S.user.mine, areas:S.user.areas, settings:S.user.settings, jobs:S.user.jobs, vac:S.user.vac }, null, 2); }
+  function importData(text){ var o = JSON.parse(text); if (!o || typeof o !== "object") throw new Error("Not a Marketing Job Search Finder file."); var n = 0, a = 0; (Array.isArray(o.mine) ? o.mine : []).forEach(function(m){ if (!m || !m.id || !m.company || !m.title) return; var i = S.user.mine.findIndex(function(x){ return x.id === m.id; }); if (i >= 0) S.user.mine[i] = m; else S.user.mine.push(m); n++; }); (Array.isArray(o.areas) ? o.areas : []).forEach(function(x){ if (!x || !x.id || !x.name) return; x.mine = true; var i = S.user.areas.findIndex(function(y){ return y.id === x.id; }); if (i >= 0) S.user.areas[i] = x; else S.user.areas.push(x); a++; }); if (o.settings && typeof o.settings === "object" && o.settings.targets && typeof o.settings.targets === "object") Object.keys(o.settings.targets).forEach(function(k){ S.user.settings.targets[k] = o.settings.targets[k]; }); if (o.jobs && typeof o.jobs === "object") Object.keys(o.jobs).forEach(function(k){ S.user.jobs[k] = o.jobs[k]; }); if (o.vac && typeof o.vac === "object") Object.keys(o.vac).forEach(function(k){ S.user.vac[k] = o.vac[k]; }); save(); return { n:n, a:a }; }
   function copyText(text, done){ var p = (navigator.clipboard && navigator.clipboard.writeText) ? navigator.clipboard.writeText(text) : Promise.reject(); p.then(function(){ done(true); }, function(){ done(false); }); }
   function openData(){
     var d = $("dataDlg"); d.textContent = "";
@@ -885,7 +920,7 @@ td.empty{padding:18px 14px;color:var(--muted)}
     s1.appendChild(el("label",{class:"chk",for:"showSample"},[ chk, "Show the sample set: " + SAMPLE_VAC.length + " marketing openings in the United States and Colombia (" + SAMPLE_DREAM.length + " of them Dream Jobs), verified " + fmtDate(VERIFIED) ])); s1.appendChild(el("p",{class:"meta",text:"Hide it to use the page for your own search only. Your data stays either way."})); box.appendChild(s1);
     var s2 = el("div",{class:"sec"},[ el("h3",{text:"Export"}), el("p",{class:"meta",text:S.user.mine.length + " opening" + (S.user.mine.length === 1 ? "" : "s") + ", " + S.user.areas.length + " area" + (S.user.areas.length === 1 ? "" : "s") + ", your salary targets and your tracking of every posting, as one JSON file."}) ]);
     var dlB = el("button",{class:"btn",type:"button",text:"Download JSON"}), cpB = el("button",{class:"btn ghost",type:"button",text:"Copy JSON"}), eMsg = el("span",{class:"small","aria-live":"polite"}), ta = el("textarea",{class:"paste",readonly:"readonly","aria-label":"Exported JSON"}); ta.hidden = true;
-    dlB.addEventListener("click", function(){ download("job-search-finder-" + today() + ".json", exportBlob(), "application/json"); eMsg.textContent = "If no file appeared, use Copy JSON and paste it into a file."; });
+    dlB.addEventListener("click", function(){ download("marketing-job-search-finder-" + today() + ".json", exportBlob(), "application/json"); eMsg.textContent = "If no file appeared, use Copy JSON and paste it into a file."; });
     cpB.addEventListener("click", function(){ var t = exportBlob(); copyText(t, function(ok){ if (ok){ eMsg.textContent = "Copied."; } else { ta.hidden = false; ta.value = t; ta.select(); eMsg.textContent = "Select the text below and copy it."; } }); });
     s2.appendChild(el("div",{class:"actions"},[ dlB, cpB, eMsg ])); s2.appendChild(ta); box.appendChild(s2);
     var s3 = el("div",{class:"sec"},[ el("h3",{text:"Import"}), el("p",{class:"meta",text:"A file exported from this page. Openings and areas with the same id are replaced; the rest are added."}) ]);
