@@ -65,5 +65,18 @@ Resource investments reflect standard enterprise production pipelines:
 *   **Total Budget Track:** **$17,890,000 COP**
 
 ---
+
+## Project: Job Search Finder — Marketing Job Finder
+**Role:** Product owner, data collection & analytics design  
+**Folder:** [`job-search-finder/`](job-search-finder/) · **Live page:** `https://mariaserrano01.github.io/digitalportfolio/job-search-finder/` (once GitHub Pages is enabled)
+
+A single-page marketing job finder built as a marketing analytics portfolio piece. Pick a country (United States first) and the screen splits into **analytical roles** (analytics, insights, growth, CRM, digital) and **strategic roles** (strategy, brand, operations, communications), each filtered by role type, work arrangement, job type, level, industry and pay.
+
+*   **Three sections:** Job search · Learn the areas (the eight areas of marketing explained) · Dream Jobs (a shortlist ranked 0–100 by resume match, role fit, interest and salary compatibility).
+*   **Bring your own profile:** upload a resume (PDF, Word or text) for a keyword-based match against each posting, set salary targets per currency, add your own openings, promote any opening to Dream Jobs, export/import your data as JSON. Everything runs in the browser; nothing is uploaded anywhere.
+*   **Sample data:** 83 real marketing openings in the United States and Colombia (55 of them Dream Jobs) verified on October 13, 2026.
+*   **Stack:** one HTML file, vanilla JavaScript, HTML-bar charts with a colorblind-checked palette, light and dark mode, phone layout.
+
+---
 *Contact: (https://www.linkedin.com/in/maria-camila-serrano-lopez/)*
 

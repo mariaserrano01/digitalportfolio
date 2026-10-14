@@ -1,0 +1,5 @@
+Marketing Analyst — sample resume for testing
+Experience: 3 years in marketing analytics and consumer insights at a consumer goods company. Built dashboards in Tableau and Power BI, ran A/B tests and regression models, segmentation with clustering, pricing analysis, survey design in Qualtrics.
+Skills: SQL, Python, R, Excel, PowerPoint, Google Analytics, Marketo, Nielsen syndicated data, forecasting, data visualization, stakeholder management, project management, ChatGPT and other AI tools.
+Education: Master's in Marketing (analytics track), Bachelor's in Business Administration.
+Languages: English, Spanish.
