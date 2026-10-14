@@ -40,7 +40,7 @@ Anyone can bring their own profile: upload a resume (PDF, Word or text) for a ke
 
 ## 2 · mariaserrano.co
 
-[**mariaserrano.co**](https://mariaserrano.co) is the long-form version of this profile, told as one story: *Water* (open-water swimming, Oceanman World Final 2024), *Work* (marketing at Óberon TSI: Oberon 360, LUNA and Oberon News), *Race* (the charity race created for Fundación Abraza un Sueño), *Approach* (a four-step, data-driven method for testing marketing ideas) and *Now* (the master's at McCombs, skills and goals). Documented in [`website/`](website/).
+[**mariaserrano.co**](https://mariaserrano.co) is the long-form version of this profile, told as one story: *Water* (open-water swimming, Oceanman World Final 2024), *Work* (marketing at Óberon TSI: Oberon 360, LUNA and Oberon News), *Race* (the charity race created for Fundación Abraza un Sueño), *Approach* (a four-step, data-driven method for testing marketing ideas) and *Now* (the master's at McCombs, skills and goals). Documented in [`personal-website/`](personal-website/).
 
 ---
 
@@ -54,7 +54,7 @@ digitalportfolio/
 │   ├── README.md              How it works, scoring, data
 │   ├── sample-resume.txt      A resume to try the resume match with
 │   └── docs/                  Screenshots
-└── website/                   mariaserrano.co, documented
+└── personal-website/          mariaserrano.co, documented
     └── README.md
 ```
 
