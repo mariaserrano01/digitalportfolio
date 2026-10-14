@@ -10,6 +10,22 @@ A **marketing job finder**: pick any country (United States first) and the scree
 2. **Learn the areas.** The eight areas of marketing, grouped the same way. Analytical: Marketing Analytics, Consumer Insights & Market Research, Growth & Performance Marketing, CRM & Lifecycle Marketing, Product & Digital Marketing. Strategic: Marketing Strategy, Brand Management, Marketing Operations & Communications. Each card gives the question the area answers, what you do, methods, tools, the role types you will see in postings (clickable), where the jobs are and what to study.
 3. **Dream Jobs.** A shortlist ranked with a Relevance score (0–100): resume match 35 · role fit 25 · your interest 25 · salary compatibility 15. Filters for country, track (analytical or strategic), area and role type, a detail view with the score breakdown, favorites, application status, 1–10 ratings, notes, CSV/JSON export, and charts (relevance of the top 15, published pay vs your minimum, the skills postings ask for colored by whether your resume has them, openings by area, role type and industry, your pipeline).
 
+## Grounded in the MS in Marketing curriculum
+
+What makes the tool more than a job board is the link to what a Master of Science in Marketing teaches. Three things were written from the curriculum's own concepts:
+
+| In the tool | Curriculum behind it |
+|---|---|
+| **Role taxonomy**: analytical vs strategic, eight areas, role types | Marketing strategy (5Cs, STP, the consumer decision process, the 4Ps) |
+| **"What to study"** note on every opening and area | Marketing strategy (break-even, customer lifetime value, RFM and direct marketing, perceptual maps, conjoint analysis, pricing and elasticity) · Marketing statistics (regression, logistic regression, chi-square, cluster and factor analysis) · Marketing analytics (importing, cleaning and visualizing data in R) |
+| **Role fit** rating of each Dream Job | How much of the role is analysis, insight and strategy rather than execution, judged with the same concepts |
+
+Only the concepts appear in the repository: no course materials, slides, assignments, readings or names of instructors, and nothing about the degree that is not public.
+
+## Privacy by design
+
+This public version was generated from a private dashboard by a build script that copies only whitelisted fields. It deliberately leaves out: the author's salary targets and previous pay, work-authorization and visa notes about the author, personal ratings, notes and application pipeline, and any internal identifiers. The salary targets in the page start empty for each viewer. Everything a viewer adds (resume, targets, openings) stays in their own browser and is never sent anywhere.
+
 ## Your profile and your data
 
 - **Resume.** Upload a PDF, Word (.docx) or text file, or paste the text. The page scans it for the skills each posting asks for (its named tools plus a lexicon of about 130 marketing, analytics and business skills) and shows a match percentage with the skills found and missing. The resume never leaves the browser, is kept in memory only and is gone on reload.

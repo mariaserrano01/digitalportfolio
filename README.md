@@ -26,6 +26,8 @@ A single-page tool that answers one question for marketing job seekers: *which o
 
 Anyone can bring their own profile: upload a resume (PDF, Word or text) for a keyword match against every posting, set salary targets per currency, add openings in any country, promote any opening to Dream Jobs and export the data. Everything runs in the browser; nothing is uploaded anywhere.
 
+**Grounded in the MS in Marketing curriculum.** The role taxonomy, the "What to study" note on every opening and the role-fit rating were written from the degree's own concepts: marketing strategy (5Cs, STP, consumer decision process, CLV, RFM, conjoint, pricing and elasticity), marketing statistics (regression, logistic regression, chi-square, cluster and factor analysis) and marketing analytics (data cleaning and visualization in R). Only the concepts appear here; no course materials and no personal data from the author's own search (salary targets, previous pay, visa notes, ratings) are in the repository.
+
 **Stack:** one HTML file, vanilla JavaScript, HTML-bar charts with a colorblind-checked palette, light and dark mode, phone layout, no build step.
 **Code and data:** [`job-search-finder/`](job-search-finder/) · [project README](job-search-finder/README.md)
 
