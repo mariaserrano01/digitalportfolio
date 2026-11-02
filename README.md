@@ -46,6 +46,16 @@ Anyone can bring their own profile: upload a resume (PDF, Word or text) for a ke
 
 ---
 
+## 3 · Market Research Case: when the brand gives you no data
+
+A team case for a marketing case competition at McCombs. The client, a heritage Western-boot brand, gave us no internal data, so we designed and fielded two original surveys (162 clean respondents, 512 conjoint choices) and ran seven methods in R: brand funnel, driver regression, choice-based conjoint, factor analysis + k-means segmentation, a randomized message A/B test, TURF and willingness-to-pay.
+
+What the data said: the problem was reach, not appeal; the gate was identity, not price; and the shoppers most moved by heritage language were the least likely to buy. The recommendation was a fit-first entry experience, not a discount.
+
+The folder holds the research design, the R scripts (brand names replaced) and the brand-free figures. Code and methods: [`market-research-case/`](market-research-case/) · [project README](market-research-case/README.md)
+
+---
+
 ## Repository map
 
 ```
@@ -56,6 +66,10 @@ digitalportfolio/
 │   ├── README.md              How it works, scoring, data
 │   ├── sample-resume.txt      A resume to try the resume match with
 │   └── docs/                  Screenshots
+├── market-research-case/      Market research case (methods, R code, figures)
+│   ├── README.md              Research design, methods, findings, limitations
+│   ├── code/                  Six R scripts, one per method
+│   └── figures/               Seven brand-free charts
 └── personal-website/          mariaserrano.co, documented
     └── README.md
 ```
