@@ -36,6 +36,15 @@ Quality rules were set before fielding and applied unchanged: an embedded attent
 
 Not a discount. A fit-first, personalized, styled entry experience aimed at experience-led shoppers, priced with the service premium shoppers already value, with the hand-made flagship line protected at full price. Lead with “people like you wear these”; let heritage close the sale in-store. Gifting as the front door: 36% got their most expensive pair as a gift or inheritance.
 
+## The figures
+
+| | |
+|---|---|
+| ![Two shopper segments](figures/01_two_shopper_segments.png) | ![Segment motivations heatmap](figures/02_segment_motivations_heatmap.png) |
+| ![Identity gap: wearers vs. non-wearers](figures/03_identity_gap_wearers_vs_nonwearers.png) | ![What drives interest: regression](figures/04_what_drives_interest_regression.png) |
+| ![Message A/B test](figures/05_message_ab_test.png) | ![Conjoint attribute importance](figures/06_conjoint_attribute_importance.png) |
+| ![TURF: best three-lever bundle](figures/07_turf_best_bundle.png) | |
+
 ## Limitations, stated plainly
 
 Samples are modest (64 + 98) and skew young and online; stated choices are not purchases; the A/B test is powered only for large effects; segments at this n are directional and validated by agreement between methods, not by test–retest.
