@@ -20,7 +20,7 @@ A single-page tool that answers one question for marketing job seekers: *which o
 
 | Section | What it does |
 |---|---|
-| **Job search** | 83 real openings in the United States and Colombia, explained card by card: what the job is, where it sits in marketing, requirements, what to study, how to approach it. |
+| **Job search** | 65 open roles in the United States and Colombia (verified November 21, 2026), explained card by card: what the job is, where it sits in marketing, requirements, what to study, how to approach it. |
 | **Learn the areas** | The eight areas of marketing, grouped into analytical and strategic: the question each area answers, methods, tools, role types, where the jobs are, what to study. |
 | **Dream Jobs** | A shortlist ranked 0–100 by resume match (35), role fit (25), the viewer's interest (25) and salary compatibility (15), with favorites, statuses, notes and CSV/JSON export. |
 
