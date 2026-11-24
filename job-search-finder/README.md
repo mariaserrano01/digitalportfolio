@@ -38,7 +38,7 @@ Light and dark mode, phone layout, keyboard-accessible, colorblind-checked chart
 
 ## Sample data
 
-`index.html` embeds a sample set: 83 marketing openings in the United States and Colombia (55 of them Dream Jobs), found on job boards and the employers' own careers pages and verified on October 13, 2026; postings may have closed since. Dream Jobs fields: company, title (with the original title when the posting is in Spanish), official URL, requisition ID, location and arrangement, employment type, seniority, timing, industry, area and role type, published pay (currency, period, range, base vs total), the posting's own words on visa sponsorship, a paraphrased description, responsibilities, required and preferred qualifications and named tools. Descriptions are paraphrases, not posting text.
+`index.html` embeds a sample set: 65 open marketing roles in the United States and Colombia, plus a Dream Jobs tracker of 58 postings with open/closed status, found on job boards and the employers' own careers pages and verified on November 21, 2026; postings may have closed since. Dream Jobs fields: company, title (with the original title when the posting is in Spanish), official URL, requisition ID, location and arrangement, employment type, seniority, timing, industry, area and role type, published pay (currency, period, range, base vs total), the posting's own words on visa sponsorship, a paraphrased description, responsibilities, required and preferred qualifications and named tools. Descriptions are paraphrases, not posting text.
 
 ## Try it
 
